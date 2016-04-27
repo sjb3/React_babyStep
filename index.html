@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>React Practice</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <div id="content"></div>
+
+    <script type="text/jsx">
+    //(jsx) reg java script ->
+    //below is core component
+    //render and html component
+
+        var JsComponent = React.createClass({
+    //always have to have render!
+            render: function() {
+                return (
+                        <h2>{this.props.user} likes to eat {this.props.food}</h2>
+                );
+            }
+        });
+      //render fx requires two components, what and where?
+      //in case u want it to be displayed in multiple places,
+      //don't forget to wrap it in one div
+
+        React.render(
+          <div>
+          <JsComponent user = 'Justin' food = 'Bacon'/>
+          <JsComponent user = 'Sally' food = 'Chicken'/>
+          <JsComponent user = 'Tony' food = 'Veggies'/>
+          </div>,
+          document.getElementById('content'));
+
+    </script>
+
+</body>
+</html>

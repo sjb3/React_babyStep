@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>React Practice</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <div id="content"></div>
+
+    <script type="text/jsx">
+
+        var JsComponent = React.createClass({
+    //always have to have render!
+            doSomething: function(){
+              alert('The displaying text is: ' + this.props.children);
+
+            },
+            render: function() {
+                return (
+                    <div>
+                      <h3>{this.props.user}</h3>
+                      <a onClick={this.doSomething} href="#">Click me</a>
+                    </div>
+                );
+            }
+        });
+      //users this time with children property ( bet starting and ending tag)
+        React.render(
+          <div>
+            <JsComponent user = 'Justin'>This guy is Awesome</JsComponent>
+            <JsComponent user = 'Lucien'>This guy smells Beautiful</JsComponent>
+          </div>,
+          document.getElementById('content'));
+
+    </script>
+
+</body>
+</html>
